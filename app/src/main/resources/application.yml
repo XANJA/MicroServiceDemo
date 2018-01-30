@@ -1,0 +1,15 @@
+server:   
+      port: 9997
+spring:
+      cloud:
+            config:
+                  uri: http://127.0.0.1:9998
+            name: app
+            profile: ${config.profile:dev}
+      application:
+            name: app
+
+eureka:
+      client:
+            serviceUrl:
+                  defaultZone: http://localhost:9999/eureka/
