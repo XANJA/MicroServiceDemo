@@ -1,0 +1,47 @@
+---
+server:
+      port: 20001
+
+spring:
+      application:
+            name: clusterServer
+      profile: cluster1
+
+eureka:  
+       instance:   
+           hostname: cluster1
+       client:
+            serviceUrl:   
+                     defaultZone: http://cluster2:20002/eureka/,http://cluster3:20003/eureka/
+
+---
+server:
+      port: 20002
+
+spring:
+      application:
+            name: clusterServer
+      profile: cluster2
+
+eureka:
+       instance:
+           hostname: cluster2
+       client:
+            serviceUrl:
+                     defaultZone: http://cluster1:20001/eureka/,http://cluster3:20003/eureka/
+
+---
+server:
+      port: 20003
+
+spring:
+      application:
+            name: clusterServer
+      profile: cluster3
+
+eureka:
+       instance:
+           hostname: cluster3
+       client:
+            serviceUrl:
+                     defaultZone: http://cluster2:20002/eureka/,http://cluster1:20001/eureka/

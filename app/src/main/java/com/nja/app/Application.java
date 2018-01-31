@@ -13,13 +13,12 @@ import org.springframework.context.annotation.Configuration;
  * @date 2018/1/30 0030 上午 11:23
  * @description
  */
-@Configuration//配置控制
-@EnableAutoConfiguration//启用自动配置
-@ComponentScan(value={"com.nja.app"})//组件扫描
+@Configuration
+@EnableAutoConfiguration
+@ComponentScan(value={"com.nja.app"})
 @EnableDiscoveryClient
 public class Application {
     public static void main(String[] args) {
-        //第一个简单的应用，
         SpringApplication.run(Application.class, args);
     }
 }

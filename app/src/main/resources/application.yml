@@ -4,8 +4,12 @@ spring:
       cloud:
             config:
                   uri: http://127.0.0.1:9998
-            name: app
-            profile: ${config.profile:dev}
+                  name: config
+                  profile: dev
+                  label: master
+                  discovery:
+                        enabled: true
+                        serviceId: config
       application:
             name: app
 

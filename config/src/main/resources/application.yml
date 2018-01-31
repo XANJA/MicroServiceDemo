@@ -3,3 +3,14 @@ server:
 spring:
       application:
             name: config
+      cloud:
+          config:
+            server:
+              git:
+                uri: https://github.com/ityouknow/spring-cloud-starter/     # 配置git仓库的地址
+                search-paths: config-repo                             # git仓库地址下的相对地址，可以配置多个，用,分割。
+
+eureka:
+      client:
+            serviceUrl:
+                  defaultZone: http://localhost:9999/eureka/
