@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @date 2018/1/31 0031 下午 02:29
  * @description
  */
-@FeignClient(name= "producer")
+@FeignClient(name= "producer",fallback = HelloRemoteHystrix.class)
 public interface HelloRemote {
 
     @RequestMapping(value = "/hello")
